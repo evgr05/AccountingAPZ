@@ -1,0 +1,23 @@
+﻿<Window x:Class="AccountingAPZ.Pages.WindowAddEditProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountingAPZ.Pages"
+        mc:Ignorable="d"
+        Height="450" Width="300"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Название продукта/материала"/>
+            <TextBox Text="{Binding Title}" x:Name="txbProd" Margin="0 0 0 10" Visibility="Collapsed"/>
+            <TextBox Text="{Binding Name}" x:Name="txbMat" Margin="0 0 0 10" Visibility="Collapsed"/>
+            
+
+
+            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>
+            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
