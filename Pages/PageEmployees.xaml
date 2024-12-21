@@ -21,11 +21,11 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
+                        <StackPanel Grid.Column="1">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="{Binding SurName}" ContentStringFormat="Фамилия: {0}"/>
-                                <Label Content="{Binding FirstName}" ContentStringFormat="Имя: {0}"/>
-                                <Label Content="{Binding Patronymic}" ContentStringFormat="Отчество: {0}"/>
+                                <Label Content="{Binding SurName}"/>
+                                <Label Content="{Binding FirstName}"/>
+                                <Label Content="{Binding Patronymic}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Phone}" ContentStringFormat="Номер телефона: {0}"/>
@@ -34,12 +34,12 @@
                                 <Label Content="{Binding Workshops.Title}" ContentStringFormat="Цех: {0}"/>
                             </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Button x:Name="btnEdit" Content="Изменить" Click="btnEdit_Click" Margin="0 0 10 0"/>
                             <Button x:Name="btnDel" Content="Удалить" Click="btnDel_Click"/>
                         </StackPanel>
 
-                    </Grid>                
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

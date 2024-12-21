@@ -26,18 +26,19 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0">
-                                    <Label Grid.Column="0" Content="{Binding Title}"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Button x:Name="btnEditProd" Content="Изменить" Click="btnEditProd_Click" Margin="0 0 10 0"/>
                                     <Button x:Name="btnDelProd" Content="Удалить" Click="btnDelProd_Click"/>
                                 </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <Label Grid.Column="0" Content="{Binding Title}"/>
+                                </StackPanel>
+
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                
+
             </TabItem>
             <TabItem Header="Материалы"
                  Name="TabMat">
@@ -49,12 +50,12 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0">
-                                    <Label Content="{Binding Name}"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Button x:Name="btnEditMat" Content="Изменить" Click="btnEditMat_Click" Margin="0 0 10 0"/>
                                     <Button x:Name="btnDelMat" Content="Удалить" Click="btnDelMat_Click"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <Label Content="{Binding Name}"/>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>

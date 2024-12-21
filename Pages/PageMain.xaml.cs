@@ -46,5 +46,10 @@ namespace AccountingAPZ.Pages
             PgFrame.frmObj.Navigate(new PageEmplProd(objUser));
 
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            PgFrame.frmObj.Navigate(new PageLogin());
+        }
     }
 }
