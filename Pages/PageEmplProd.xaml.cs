@@ -29,8 +29,9 @@ namespace AccountingAPZ.Pages
             objUser = userObj;
             prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.ToList();
             PgFrame.headStr.Content = "Изготовленная продукция";
+            dateCol.Binding.StringFormat = "dd.MM.yyyy";
             
-            
+
 
         }
 

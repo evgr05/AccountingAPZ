@@ -11,40 +11,56 @@
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
         <DataGrid x:Name="prodGrid" 
                   AutoGenerateColumns="False" 
                   IsReadOnly="True" 
-                  Grid.Row="0">
+                  Grid.Row="0"
+                  FontSize="15"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Employees.FirstName}"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Employees.SurName}"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Employees.Patronymic}"/>
-                <DataGridTextColumn Header="Произведено" Binding="{Binding Products.Title}"/>
-                <DataGridTextColumn Header="Количество" Binding="{Binding Count}"/>
-                <DataGridTextColumn Header="Дата изготовления" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Employees.SurName}"/>
+                <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Employees.FirstName}"/>
+                <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Employees.Patronymic}"/>
+                <DataGridTextColumn Header="Произведено" Width="*" Binding="{Binding Products.Title}"/>
+                <DataGridTextColumn Header="Количество" Width="100" Binding="{Binding Count}"/>
+                <DataGridTextColumn Header="Дата изготовления" x:Name="dateCol" Binding="{Binding Date}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnEdit" Content="Изменить" Click="btnEdit_Click"/>
+                            <Button x:Name="btnEdit" Content="Изменить"
+                                    Width="100" Height="30"
+                                    FontSize="15"
+                                    Click="btnEdit_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnDel" Content="Удалить" Click="btnDel_Click"/>
+                            <Button x:Name="btnDel" Content="Удалить" 
+                                    Width="100" Height="30"
+                                    FontSize="15"
+                                    Click="btnDel_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdd" Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnAdd_Click"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Поиск" VerticalAlignment="Center"/>
-            <TextBox x:Name="txbSearch" Width="300" TextChanged="txbSearch_TextChanged"/>
-            <ComboBox Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
+        <Button x:Name="btnAdd" 
+                Width="100" Height="30"
+                FontSize="15"
+                Margin="5 0 0 0" 
+                Content="Добавить" 
+                Grid.Row="1" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                Click="btnAdd_Click"/>
+        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Поиск" FontSize="17" VerticalAlignment="Center"/>
+            <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch"  Width="300" TextChanged="txbSearch_TextChanged"/>
+            <ComboBox FontSize="15" Width="170" Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
                 <ComboBoxItem IsSelected="True" Content="Имя"/>
                 <ComboBoxItem Content="Фамилия"/>
                 <ComboBoxItem Content="Отчество"/>
@@ -52,6 +68,14 @@
                 <ComboBoxItem Content="Дата изготовления"/>
             </ComboBox>
         </StackPanel>
-        <Button x:Name="btnBack" Content="Назад" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"  Click="btnBack_Click"/>
+        <Button 
+            x:Name="btnBack" 
+            Width="100" Height="30"
+            FontSize="15"
+            Content="Назад" 
+            Margin="0 0 5 0" 
+            Grid.Row="1"
+            HorizontalAlignment="Right" VerticalAlignment="Center" 
+            Click="btnBack_Click"/>
     </Grid>
 </Page>

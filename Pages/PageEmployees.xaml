@@ -11,7 +11,7 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
         <ListView x:Name="EmployeeList">
             <ListView.ItemTemplate>
@@ -43,11 +43,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="btnAdd" Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnAdd_Click"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Поиск" VerticalAlignment="Center"/>
-            <TextBox x:Name="txbSearch" Width="300" TextChanged="txbSearch_TextChanged"/>
-            <ComboBox Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
+        <Button x:Name="btnAdd" 
+                Width="100" Height="30"
+                FontSize="15"
+                Margin="5 0 0 0"
+                Content="Добавить" 
+                Grid.Row="1"
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                Click="btnAdd_Click"/>
+        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="17" Text="Поиск" VerticalAlignment="Center"/>
+            <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch" Width="300" TextChanged="txbSearch_TextChanged"/>
+            <ComboBox FontSize="17" Width="170" Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
                 <ComboBoxItem IsSelected="True" Content="Имя"/>
                 <ComboBoxItem Content="Фамилия"/>
                 <ComboBoxItem Content="Отчество"/>
@@ -57,7 +64,14 @@
                 <ComboBoxItem Content="Должность"/>
             </ComboBox>
         </StackPanel>
-        <Button x:Name="btnBack" Content="Назад" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"  Click="btnBack_Click"/>
+        <Button x:Name="btnBack" 
+                Width="100" Height="30"
+                FontSize="15"
+                Margin="0 0 5 0"
+                Content="Назад" 
+                Grid.Row="1" 
+                HorizontalAlignment="Right" VerticalAlignment="Center"  
+                Click="btnBack_Click"/>
 
     </Grid>
 </Page>
