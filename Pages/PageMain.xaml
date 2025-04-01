@@ -9,11 +9,30 @@
       Title="PageMain">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Margin="0 0 0 10" x:Name="btnEmployees" Content="Сотрудники" Click="btnEmployees_Click"/>
-            <Button Margin="0 0 0 10" x:Name="btnProduction" Content="Материалы и продукция" Click="btnProduction_Click"/>
-            <Button Margin="0 0 0 10" x:Name="btnEmplProd" Content="Произведённая продукция" Click="btnEmplProd_Click"/>
-            <Button x:Name="btnExit" Content="Выйти" Click="btnExit_Click"/>
+        <StackPanel Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="0 0 0 10" 
+                    x:Name="btnEmployees" 
+                    Content="Сотрудники" 
+                    Click="btnEmployees_Click"
+                    Height="30"
+                    FontSize="14"/>
+            <Button Margin="0 0 0 10" 
+                    x:Name="btnProduction" 
+                    Content="Материалы и продукция" 
+                    Click="btnProduction_Click"
+                    Height="30"
+                    FontSize="14"/>
+            <Button Margin="0 0 0 10" 
+                    x:Name="btnEmplProd" 
+                    Content="Произведённая продукция" 
+                    Click="btnEmplProd_Click"
+                    Height="30"
+                    FontSize="14"/>
+            <Button x:Name="btnExit" 
+                    Content="Выйти" 
+                    Click="btnExit_Click"
+                    Height="30"
+                    FontSize="14"/>
         </StackPanel>
     </Grid>
 </Page>

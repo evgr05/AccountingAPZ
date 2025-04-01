@@ -9,12 +9,21 @@
       Title="PageLogin">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="150">
-            <TextBlock Text="Логин: "/>
-            <TextBox x:Name="txbLogin"/>
-            <TextBlock Text="Пароль: "/>
-            <PasswordBox x:Name="psbPassword" Margin="0 0 0 10"/>
-            <Button x:Name="okBtn" Content="Войти" Click="okBtn_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
+            <TextBlock Text="Логин: " FontSize="14"/>
+            <TextBox x:Name="txbLogin"
+                     Height="30"
+                     FontSize="14"/>
+            <TextBlock Text="Пароль: " FontSize="14"/>
+            <PasswordBox x:Name="psbPassword" 
+                         Margin="0 0 0 10"
+                         Height="30"
+                         FontSize="14"/>
+            <Button x:Name="okBtn" 
+                    Content="Войти" 
+                    Click="okBtn_Click"
+                    Height="30"
+                    FontSize="14"/>
         </StackPanel>
         
         

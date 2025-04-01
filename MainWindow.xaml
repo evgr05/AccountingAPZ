@@ -6,17 +6,24 @@
         xmlns:local="clr-namespace:AccountingAPZ"
         mc:Ignorable="d"
         Title="Учет изготавливаемой продукции" 
-        Height="600" Width="900"
+        Height="600" Width="1000"
         MinHeight="450" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55"/>
+            <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Image Source="/img/APZ.png"/>
-            <Label x:Name="headLbl" Content="Производство продукции" FontSize="35"/>
-        </StackPanel>
+        <Image Source="/img/APZ.png" 
+               Grid.Row="0" 
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="5 0 0 0"/>
+        <Label x:Name="headLbl" 
+               Grid.Row="0" 
+               Content="Производство продукции" FontSize="30" 
+               HorizontalAlignment="Right" 
+               VerticalAlignment="Center"
+               Margin="0 0 5 0"/>
         <Frame Name="frmMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
     </Grid>
 </Window>
