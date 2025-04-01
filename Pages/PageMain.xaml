@@ -15,24 +15,24 @@
                     Content="Сотрудники" 
                     Click="btnEmployees_Click"
                     Height="30"
-                    FontSize="14"/>
+                    FontSize="16"/>
             <Button Margin="0 0 0 10" 
                     x:Name="btnProduction" 
                     Content="Материалы и продукция" 
                     Click="btnProduction_Click"
                     Height="30"
-                    FontSize="14"/>
+                    FontSize="16"/>
             <Button Margin="0 0 0 10" 
                     x:Name="btnEmplProd" 
                     Content="Произведённая продукция" 
                     Click="btnEmplProd_Click"
                     Height="30"
-                    FontSize="14"/>
+                    FontSize="16"/>
             <Button x:Name="btnExit" 
                     Content="Выйти" 
                     Click="btnExit_Click"
                     Height="30"
-                    FontSize="14"/>
+                    FontSize="16"/>
         </StackPanel>
     </Grid>
 </Page>

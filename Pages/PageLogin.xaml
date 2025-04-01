@@ -13,17 +13,18 @@
             <TextBlock Text="Логин: " FontSize="14"/>
             <TextBox x:Name="txbLogin"
                      Height="30"
-                     FontSize="14"/>
+                     FontSize="16"/>
             <TextBlock Text="Пароль: " FontSize="14"/>
             <PasswordBox x:Name="psbPassword" 
                          Margin="0 0 0 10"
                          Height="30"
-                         FontSize="14"/>
+                         FontSize="16"
+                        />
             <Button x:Name="okBtn" 
                     Content="Войти" 
                     Click="okBtn_Click"
                     Height="30"
-                    FontSize="14"/>
+                    FontSize="16"/>
         </StackPanel>
         
         
