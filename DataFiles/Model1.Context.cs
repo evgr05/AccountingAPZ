@@ -27,10 +27,12 @@ namespace AccountingAPZ.DataFiles
     
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<EmployeesProducts> EmployeesProducts { get; set; }
+        public virtual DbSet<MaterialProducts> MaterialProducts { get; set; }
         public virtual DbSet<Materials> Materials { get; set; }
         public virtual DbSet<Posts> Posts { get; set; }
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Workshops> Workshops { get; set; }
     }
