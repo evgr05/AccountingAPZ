@@ -28,7 +28,7 @@ namespace AccountingAPZ
             DBContext.entObj = new AccountingAPZEntities();
             PgFrame.frmObj = frmMain;
             PgFrame.headStr = headLbl;
-            PgFrame.headStr.Content = "123";
+            //PgFrame.headStr.Content = "123";
             PgFrame.frmObj.Navigate(new PageLogin());
             
         }

@@ -32,6 +32,7 @@
             <Image Source="/img/zavod.jpg" Stretch="UniformToFill"/>
         </Grid>
 
+        
         <StackPanel Grid.Column="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"

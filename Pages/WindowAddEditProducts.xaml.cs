@@ -32,10 +32,11 @@ namespace AccountingAPZ.Pages
             if (val == 1)
             {
                 txbProd.Visibility = Visibility.Visible;
-                
+                matGrid.Visibility = Visibility.Visible;
+
                 if (_selectedProd != null)
                 {
-                    _currentProd = _selectedProd;
+                    _currentProd = _selectedProd;                    
                     matGrid.ItemsSource = DBContext.entObj.MaterialProducts.Where(item => item.ProductId == _selectedProd.Id).ToList();
                 }
                 DataContext = _currentProd;

@@ -38,7 +38,7 @@ namespace AccountingAPZ.Pages
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             WindowAddEmplProd windowAddEmplProd = new WindowAddEmplProd((sender as Button).DataContext as EmployeesProducts, objUser);
-            windowAddEmplProd.Show();
+            windowAddEmplProd.ShowDialog();
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ namespace AccountingAPZ.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             WindowAddEmplProd windowAddEmplProd = new WindowAddEmplProd(null, objUser);
-            windowAddEmplProd.Show();
+            windowAddEmplProd.ShowDialog();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

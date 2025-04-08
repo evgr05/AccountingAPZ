@@ -26,6 +26,10 @@ namespace AccountingAPZ.Pages
         {
             InitializeComponent();
             objUser = userObj;
+            if (objUser.RoleId == 1)
+            {
+                btnUsers.Visibility = Visibility.Visible;
+            }
             PgFrame.headStr.Content = "Главное меню";
         }
 
@@ -50,6 +54,11 @@ namespace AccountingAPZ.Pages
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             PgFrame.frmObj.Navigate(new PageLogin());
+        }
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            PgFrame.frmObj.Navigate(new PageUsers(objUser));
         }
     }
 }
