@@ -13,17 +13,35 @@
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Source="/img/APZ.png" 
-               Grid.Row="0" 
-               HorizontalAlignment="Left"
-               VerticalAlignment="Center"
-               Margin="5 0 0 0"/>
-        <Label x:Name="headLbl" 
-               Grid.Row="0" 
-               Content="Производство продукции" FontSize="30" 
-               HorizontalAlignment="Right" 
-               VerticalAlignment="Center"
-               Margin="0 0 5 0"/>
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.001">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#0C4092FF" Offset="0"/>
+                    <GradientStop Color="#334092FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Source="/img/APZ.png" 
+                   Grid.Row="0" 
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="5 0 0 0"/>
+            <Label x:Name="headLbl" 
+                   Grid.Row="0" 
+                   Content="Производство продукции"
+                   FontSize="30" 
+                   HorizontalAlignment="Right" 
+                   VerticalAlignment="Center"
+                   Margin="0 0 5 0"/>
+        </Grid>
+
         <Frame Name="frmMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
     </Grid>
 </Window>
