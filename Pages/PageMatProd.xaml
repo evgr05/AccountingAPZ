@@ -32,6 +32,7 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
                                     <Label Grid.Column="0" Content="{Binding Title}"/>
+                                    <Label Content="{Binding mat}" ContentStringFormat="Материалы: {0}"/>
                                 </StackPanel>
 
                             </Grid>

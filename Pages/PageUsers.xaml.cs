@@ -32,7 +32,7 @@ namespace AccountingAPZ.Pages
                 MessageBox.Show("У вас недостаточно прав для перехода на данную страницу!","Ошибка",MessageBoxButton.OK, MessageBoxImage.Error);
                 PgFrame.frmObj.Navigate(new PageMain(objUser));
             }
-            UsersList.ItemsSource = DBContext.entObj.Users.ToList();
+            usersList.ItemsSource = DBContext.entObj.Users.ToList();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -52,10 +52,35 @@ namespace AccountingAPZ.Pages
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                if (MessageBox.Show("Вы действительно хотите удалить данную запись?",
+                    "Удаление",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    DBContext.entObj.Users.Remove((sender as Button).DataContext as Users);
+                    DBContext.entObj.SaveChanges();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            usersList.ItemsSource = DBContext.entObj.Users.Where(x => x.Employees.FirstName.Contains(txbSearch.Text) ||
+            x.Employees.SurName.Contains(txbSearch.Text) ||
+            x.Employees.Patronymic.Contains(txbSearch.Text) ||
+            x.Employees.Workshops.Title.Contains(txbSearch.Text) ||
+            x.Employees.Posts.Title.Contains(txbSearch.Text) ||
+            x.Login.Contains(txbSearch.Text) ||
+            x.Role.Title.Contains(txbSearch.Text)).ToList();
+        }
+
+        private void btnChanPass_Click(object sender, RoutedEventArgs e)
         {
 
         }

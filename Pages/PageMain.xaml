@@ -9,7 +9,32 @@
       Title="PageMain">
 
     <Grid>
-        <StackPanel Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#00000000"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.OpacityMask>
+            <Image Source="/img/zavod.jpg" Stretch="UniformToFill"/>
+        </Grid>
+        <StackPanel Width="250" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Grid.Column="1">
             <Button Margin="0 0 0 10" 
                     x:Name="btnEmployees" 
                     Content="Сотрудники" 

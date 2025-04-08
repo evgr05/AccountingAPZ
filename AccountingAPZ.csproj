@@ -160,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\WindowChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\PageEmployees.xaml.cs">
@@ -188,6 +192,9 @@
     </Compile>
     <Compile Include="Pages\WindowAddEmplProd.xaml.cs">
       <DependentUpon>WindowAddEmplProd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WindowChangePassword.xaml.cs">
+      <DependentUpon>WindowChangePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
