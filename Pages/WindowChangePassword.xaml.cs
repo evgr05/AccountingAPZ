@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountingAPZ.DataFiles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,37 @@ namespace AccountingAPZ.Pages
     /// </summary>
     public partial class WindowChangePassword : Window
     {
-        public WindowChangePassword()
+        Users _selectedUser = new Users();
+        Users objUser;
+        public WindowChangePassword(Users userObj, Users _currentUser)
         {
             InitializeComponent();
+            _selectedUser = _currentUser;
+            objUser = userObj;
+        }
+
+        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (psbPassword.Password == psbRepPassword.Password)
+                {
+
+                }
+                else
+                {
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bckBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
