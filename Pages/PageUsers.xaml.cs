@@ -1,4 +1,5 @@
 ﻿using AccountingAPZ.DataFiles;
+using AccountingAPZ.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +43,14 @@ namespace AccountingAPZ.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowAddEditUsers windowAddEditUsers = new WindowAddEditUsers(objUser, null);
+            windowAddEditUsers.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowAddEditUsers windowAddEditUsers = new WindowAddEditUsers(objUser, (sender as Button).DataContext as Users);
+            windowAddEditUsers.ShowDialog();
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -61,7 +64,8 @@ namespace AccountingAPZ.Pages
                 {
                     DBContext.entObj.Users.Remove((sender as Button).DataContext as Users);
                     DBContext.entObj.SaveChanges();
-                }
+                    usersList.ItemsSource = DBContext.entObj.Users.ToList();
+                }                
             }
             catch(Exception ex)
             {

@@ -148,19 +148,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WindowAddEditEmpl.xaml">
+    <Page Include="Windows\WindowAddEditEmpl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WindowAddEditProducts.xaml">
+    <Page Include="Windows\WindowAddEditProducts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WindowAddEmplProd.xaml">
+    <Page Include="Windows\WindowAddEditUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\WindowChangePassword.xaml">
+    <Page Include="Windows\WindowAddEmplProd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,16 +188,19 @@
     <Compile Include="Pages\PageUsers.xaml.cs">
       <DependentUpon>PageUsers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WindowAddEditEmpl.xaml.cs">
+    <Compile Include="Windows\WindowAddEditEmpl.xaml.cs">
       <DependentUpon>WindowAddEditEmpl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WindowAddEditProducts.xaml.cs">
+    <Compile Include="Windows\WindowAddEditProducts.xaml.cs">
       <DependentUpon>WindowAddEditProducts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WindowAddEmplProd.xaml.cs">
+    <Compile Include="Windows\WindowAddEditUsers.xaml.cs">
+      <DependentUpon>WindowAddEditUsers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowAddEmplProd.xaml.cs">
       <DependentUpon>WindowAddEmplProd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\WindowChangePassword.xaml.cs">
+    <Compile Include="Windows\WindowChangePassword.xaml.cs">
       <DependentUpon>WindowChangePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -246,5 +253,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

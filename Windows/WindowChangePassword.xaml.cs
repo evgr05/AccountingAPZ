@@ -27,6 +27,7 @@ namespace AccountingAPZ.Pages
             InitializeComponent();
             _selectedUser = _currentUser;
             objUser = userObj;
+            DataContext = _selectedUser;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

@@ -88,9 +88,10 @@
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="650" />
           <Property Name="EmployeId" Type="int" />
           <Property Name="RoleId" Type="int" />
@@ -418,9 +419,10 @@
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
+            <PropertyRef Name="Login" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="650" FixedLength="false" Unicode="true" />
           <Property Name="EmployeId" Type="Int32" />
           <Property Name="RoleId" Type="Int32" />
