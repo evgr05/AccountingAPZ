@@ -26,8 +26,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Button x:Name="btnEditProd" Content="Изменить" Click="btnEditProd_Click" Margin="0 0 10 0"/>
+                                <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="btnEditProd" Content="Изменить" Click="btnEditProd_Click" Margin="0 0 0 5"/>
                                     <Button x:Name="btnDelProd" Content="Удалить" Click="btnDelProd_Click"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
@@ -51,8 +51,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Button x:Name="btnEditMat" Content="Изменить" Click="btnEditMat_Click" Margin="0 0 10 0"/>
+                                <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="btnEditMat" Content="Изменить" Click="btnEditMat_Click" Margin="0 0 0 5"/>
                                     <Button x:Name="btnDelMat" Content="Удалить" Click="btnDelMat_Click"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
