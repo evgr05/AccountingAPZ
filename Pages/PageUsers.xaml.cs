@@ -82,7 +82,8 @@ namespace AccountingAPZ.Pages
 
         private void btnChanPass_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowChangePassword windowChangePassword = new WindowChangePassword(objUser, (sender as Button).DataContext as Users);
+            windowChangePassword.ShowDialog();
         }
     }
 }

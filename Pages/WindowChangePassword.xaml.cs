@@ -35,11 +35,15 @@ namespace AccountingAPZ.Pages
             {
                 if (psbPassword.Password == psbRepPassword.Password)
                 {
-
+                    string hash = md5.hashPassword(psbRepPassword.Password);
+                    _selectedUser.Password = hash;
+                    DBContext.entObj.SaveChanges();
+                    PgFrame.frmObj.Navigate(new PageUsers(objUser));
+                    this.Close();
                 }
                 else
                 {
-                    
+                    MessageBox.Show("Пароли не совпадают");
                 }
             }
             catch (Exception ex)
