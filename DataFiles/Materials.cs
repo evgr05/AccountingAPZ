@@ -18,7 +18,6 @@ namespace AccountingAPZ.DataFiles
         public Materials()
         {
             this.MaterialProducts = new HashSet<MaterialProducts>();
-            this.Employees = new HashSet<Employees>();
         }
     
         public int Id { get; set; }
@@ -28,7 +27,5 @@ namespace AccountingAPZ.DataFiles
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaterialProducts> MaterialProducts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

@@ -18,14 +18,6 @@
           <Property Name="PostId" Type="int" />
           <Property Name="WorkshopId" Type="int" />
         </EntityType>
-        <EntityType Name="EmployeesMaterials">
-          <Key>
-            <PropertyRef Name="MaterialId" />
-            <PropertyRef Name="EmployeeId" />
-          </Key>
-          <Property Name="MaterialId" Type="int" Nullable="false" />
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="EmployeesProducts">
           <Key>
             <PropertyRef Name="Id" />
@@ -128,30 +120,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_EmployeesMaterials_Employees">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
-          <End Role="EmployeesMaterials" Type="Self.EmployeesMaterials" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employees">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EmployeesMaterials">
-              <PropertyRef Name="EmployeeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmployeesMaterials_Materials">
-          <End Role="Materials" Type="Self.Materials" Multiplicity="1" />
-          <End Role="EmployeesMaterials" Type="Self.EmployeesMaterials" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Materials">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EmployeesMaterials">
-              <PropertyRef Name="MaterialId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EmployeesProducts_Employees">
           <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
           <End Role="EmployeesProducts" Type="Self.EmployeesProducts" Multiplicity="*" />
@@ -226,7 +194,6 @@
         </Association>
         <EntityContainer Name="Хранилище AccountingAPZModelContainer">
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EmployeesMaterials" EntityType="Self.EmployeesMaterials" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeesProducts" EntityType="Self.EmployeesProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MaterialProducts" EntityType="Self.MaterialProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materials" EntityType="Self.Materials" Schema="dbo" store:Type="Tables" />
@@ -243,14 +210,6 @@
           <AssociationSet Name="FK_Employees_Workshops" Association="Self.FK_Employees_Workshops">
             <End Role="Workshops" EntitySet="Workshops" />
             <End Role="Employees" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeesMaterials_Employees" Association="Self.FK_EmployeesMaterials_Employees">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="EmployeesMaterials" EntitySet="EmployeesMaterials" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmployeesMaterials_Materials" Association="Self.FK_EmployeesMaterials_Materials">
-            <End Role="Materials" EntitySet="Materials" />
-            <End Role="EmployeesMaterials" EntitySet="EmployeesMaterials" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeesProducts_Employees" Association="Self.FK_EmployeesProducts_Employees">
             <End Role="Employees" EntitySet="Employees" />
@@ -324,10 +283,6 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="EmployeesMaterials" Association="AccountingAPZModel.EmployeesMaterials">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="Materials" EntitySet="Materials" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Employees">
           <Key>
@@ -345,7 +300,6 @@
           <NavigationProperty Name="Workshops" Relationship="AccountingAPZModel.FK_Employees_Workshops" FromRole="Employees" ToRole="Workshops" />
           <NavigationProperty Name="EmployeesProducts" Relationship="AccountingAPZModel.FK_EmployeesProducts_Employees" FromRole="Employees" ToRole="EmployeesProducts" />
           <NavigationProperty Name="Users" Relationship="AccountingAPZModel.FK_Users_Employees" FromRole="Employees" ToRole="Users" />
-          <NavigationProperty Name="Materials" Relationship="AccountingAPZModel.EmployeesMaterials" FromRole="Employees" ToRole="Materials" />
         </EntityType>
         <EntityType Name="EmployeesProducts">
           <Key>
@@ -379,7 +333,6 @@
           <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="MaterialProducts" Relationship="AccountingAPZModel.FK_MaterialProducts_Materials" FromRole="Materials" ToRole="MaterialProducts" />
-          <NavigationProperty Name="Employees" Relationship="AccountingAPZModel.EmployeesMaterials" FromRole="Materials" ToRole="Employees" />
         </EntityType>
         <EntityType Name="Posts">
           <Key>
@@ -534,10 +487,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="EmployeesMaterials">
-          <End Type="AccountingAPZModel.Employees" Role="Employees" Multiplicity="*" />
-          <End Type="AccountingAPZModel.Materials" Role="Materials" Multiplicity="*" />
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -643,14 +592,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="EmployeesMaterials" TypeName="AccountingAPZModel.EmployeesMaterials" StoreEntitySet="EmployeesMaterials">
-            <EndProperty Name="Materials">
-              <ScalarProperty Name="Id" ColumnName="MaterialId" />
-            </EndProperty>
-            <EndProperty Name="Employees">
-              <ScalarProperty Name="Id" ColumnName="EmployeeId" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
