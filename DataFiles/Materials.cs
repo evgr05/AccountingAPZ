@@ -17,7 +17,7 @@ namespace AccountingAPZ.DataFiles
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Materials()
         {
-            this.MaterialProducts = new HashSet<MaterialProducts>();
+            this.Products = new HashSet<Products>();
         }
     
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace AccountingAPZ.DataFiles
         public Nullable<int> Count { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialProducts> MaterialProducts { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

@@ -12,16 +12,7 @@
             <TextBlock Text="Название продукта/материала"/>
             <TextBox Text="{Binding Title}" x:Name="txbProd" Margin="0 0 0 10" Visibility="Collapsed"/>
             <TextBox Text="{Binding Name}" x:Name="txbMat" Margin="0 0 0 10" Visibility="Collapsed"/>
-            <DataGrid x:Name="matGrid" 
-                      Margin="0 0 0 10" 
-                      AutoGenerateColumns="False"
-                      Height="100"
-                      Visibility="Collapsed">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Материал" Binding="{Binding Materials.Name}"/>
-                    <DataGridTextColumn Header="Количество" Binding="{Binding CountMat}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            
 
 
             <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>

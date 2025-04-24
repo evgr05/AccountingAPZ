@@ -35,7 +35,6 @@
           </Key>
           <Property Name="MaterialId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
-          <Property Name="CountMat" Type="int" />
         </EntityType>
         <EntityType Name="Materials">
           <Key>
@@ -243,7 +242,6 @@
         <EntityContainer Name="AccountingAPZEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="AccountingAPZModel.Employees" />
           <EntitySet Name="EmployeesProducts" EntityType="AccountingAPZModel.EmployeesProducts" />
-          <EntitySet Name="MaterialProducts" EntityType="AccountingAPZModel.MaterialProducts" />
           <EntitySet Name="Materials" EntityType="AccountingAPZModel.Materials" />
           <EntitySet Name="Posts" EntityType="AccountingAPZModel.Posts" />
           <EntitySet Name="Products" EntityType="AccountingAPZModel.Products" />
@@ -271,17 +269,13 @@
             <End Role="Products" EntitySet="Products" />
             <End Role="EmployeesProducts" EntitySet="EmployeesProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK_MaterialProducts_Materials" Association="AccountingAPZModel.FK_MaterialProducts_Materials">
-            <End Role="Materials" EntitySet="Materials" />
-            <End Role="MaterialProducts" EntitySet="MaterialProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MaterialProducts_Products" Association="AccountingAPZModel.FK_MaterialProducts_Products">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="MaterialProducts" EntitySet="MaterialProducts" />
-          </AssociationSet>
           <AssociationSet Name="FK_Users_Role" Association="AccountingAPZModel.FK_Users_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="MaterialProducts" Association="AccountingAPZModel.MaterialProducts">
+            <End Role="Materials" EntitySet="Materials" />
+            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Employees">
@@ -313,17 +307,6 @@
           <NavigationProperty Name="Employees" Relationship="AccountingAPZModel.FK_EmployeesProducts_Employees" FromRole="EmployeesProducts" ToRole="Employees" />
           <NavigationProperty Name="Products" Relationship="AccountingAPZModel.FK_EmployeesProducts_Products" FromRole="EmployeesProducts" ToRole="Products" />
         </EntityType>
-        <EntityType Name="MaterialProducts">
-          <Key>
-            <PropertyRef Name="MaterialId" />
-            <PropertyRef Name="ProductId" />
-          </Key>
-          <Property Name="MaterialId" Type="Int32" Nullable="false" />
-          <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="CountMat" Type="Int32" />
-          <NavigationProperty Name="Materials" Relationship="AccountingAPZModel.FK_MaterialProducts_Materials" FromRole="MaterialProducts" ToRole="Materials" />
-          <NavigationProperty Name="Products" Relationship="AccountingAPZModel.FK_MaterialProducts_Products" FromRole="MaterialProducts" ToRole="Products" />
-        </EntityType>
         <EntityType Name="Materials">
           <Key>
             <PropertyRef Name="Id" />
@@ -332,7 +315,7 @@
           <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Count" Type="Int32" />
-          <NavigationProperty Name="MaterialProducts" Relationship="AccountingAPZModel.FK_MaterialProducts_Materials" FromRole="Materials" ToRole="MaterialProducts" />
+          <NavigationProperty Name="Products" Relationship="AccountingAPZModel.MaterialProducts" FromRole="Materials" ToRole="Products" />
         </EntityType>
         <EntityType Name="Posts">
           <Key>
@@ -349,7 +332,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EmployeesProducts" Relationship="AccountingAPZModel.FK_EmployeesProducts_Products" FromRole="Products" ToRole="EmployeesProducts" />
-          <NavigationProperty Name="MaterialProducts" Relationship="AccountingAPZModel.FK_MaterialProducts_Products" FromRole="Products" ToRole="MaterialProducts" />
+          <NavigationProperty Name="Materials" Relationship="AccountingAPZModel.MaterialProducts" FromRole="Products" ToRole="Materials" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -451,30 +434,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MaterialProducts_Materials">
-          <End Type="AccountingAPZModel.Materials" Role="Materials" Multiplicity="1" />
-          <End Type="AccountingAPZModel.MaterialProducts" Role="MaterialProducts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Materials">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MaterialProducts">
-              <PropertyRef Name="MaterialId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MaterialProducts_Products">
-          <End Type="AccountingAPZModel.Products" Role="Products" Multiplicity="1" />
-          <End Type="AccountingAPZModel.MaterialProducts" Role="MaterialProducts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MaterialProducts">
-              <PropertyRef Name="ProductId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Users_Role">
           <End Type="AccountingAPZModel.Role" Role="Role" Multiplicity="0..1" />
           <End Type="AccountingAPZModel.Users" Role="Users" Multiplicity="*" />
@@ -486,6 +445,10 @@
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="MaterialProducts">
+          <End Type="AccountingAPZModel.Materials" Role="Materials" Multiplicity="*" />
+          <End Type="AccountingAPZModel.Products" Role="Products" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -515,15 +478,6 @@
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MaterialProducts">
-            <EntityTypeMapping TypeName="AccountingAPZModel.MaterialProducts">
-              <MappingFragment StoreEntitySet="MaterialProducts">
-                <ScalarProperty Name="CountMat" ColumnName="CountMat" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -592,6 +546,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="MaterialProducts" TypeName="AccountingAPZModel.MaterialProducts" StoreEntitySet="MaterialProducts">
+            <EndProperty Name="Products">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Materials">
+              <ScalarProperty Name="Id" ColumnName="MaterialId" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
