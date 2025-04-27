@@ -10,10 +10,20 @@
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="EmployeeList">
+        <Menu Grid.Row="0">
+            <MenuItem Header="Должности" 
+                      x:Name="postsMenu" 
+                      Click="postsMenu_Click"/>
+            <MenuItem Header="Отделы и цеха" 
+                      x:Name="workshopsMenu" 
+                      Click="workshopsMenu_Click"/>
+            
+        </Menu>
+        <ListView x:Name="EmployeeList" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -48,10 +58,10 @@
                 FontSize="15"
                 Margin="5 0 0 0"
                 Content="Добавить" 
-                Grid.Row="1"
+                Grid.Row="2"
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 Click="btnAdd_Click"/>
-        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock FontSize="17" Text="Поиск" VerticalAlignment="Center"/>
             <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch" Width="300" TextChanged="txbSearch_TextChanged"/>
             <ComboBox FontSize="17" Width="170" Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
@@ -69,7 +79,7 @@
                 FontSize="15"
                 Margin="0 0 5 0"
                 Content="Назад" 
-                Grid.Row="1" 
+                Grid.Row="2" 
                 HorizontalAlignment="Right" VerticalAlignment="Center"  
                 Click="btnBack_Click"/>
 

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AccountingAPZ.Windows;
 
 namespace AccountingAPZ.Pages
 {
@@ -130,6 +131,19 @@ namespace AccountingAPZ.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        private void postsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            WindowPosts windowPosts = new WindowPosts();
+            windowPosts.ShowDialog();
+        }
+
+        private void workshopsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            WindowWorkshops windowWorkshops = new WindowWorkshops();
+            windowWorkshops.ShowDialog();
         }
     }
 }

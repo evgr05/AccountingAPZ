@@ -67,6 +67,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\PageAddEditPosts.xaml.cs">
+      <DependentUpon>PageAddEditPosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageAddEditWorkshops.xaml.cs">
+      <DependentUpon>PageAddEditWorkshops.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageListPosts.xaml.cs">
+      <DependentUpon>PageListPosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageListWorkshops.xaml.cs">
+      <DependentUpon>PageListWorkshops.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowPosts.xaml.cs">
+      <DependentUpon>WindowPosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowWorkshops.xaml.cs">
+      <DependentUpon>WindowWorkshops.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,11 +143,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageAddEditPosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAddEditWorkshops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageEmployees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageEmplProd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageListPosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageListWorkshops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +200,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\WindowChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowPosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowWorkshops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,7 +8,7 @@
         Height="450" Width="300"
         ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
             <TextBlock Text="Название продукта/материала"/>
             <TextBox Text="{Binding Title}" x:Name="txbProd" Margin="0 0 0 10" Visibility="Collapsed"/>
             <TextBox Text="{Binding Name}" x:Name="txbMat" Margin="0 0 0 10" Visibility="Collapsed"/>

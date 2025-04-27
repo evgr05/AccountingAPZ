@@ -10,6 +10,7 @@ namespace AccountingAPZ.DataFiles
     internal class PgFrame
     {
         public static Frame frmObj;
+        public static Frame subFrmObj;
         public static Label headStr;
     }
     

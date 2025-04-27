@@ -27,7 +27,7 @@ namespace AccountingAPZ.Windows
         {
             InitializeComponent();
             objUser = userObj;
-            if (_currentUser != null )
+            if (_currentUser != null) 
             {
                 _selectedUser = _currentUser;
             }

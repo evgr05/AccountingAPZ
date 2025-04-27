@@ -8,7 +8,7 @@
         Height="450" Width="300"
         ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
             <TextBlock Text="ФИО сотрудника "/>
             <ComboBox x:Name="cmbNameEmpl" SelectedItem="{Binding Employees}">
                 <ComboBox.ItemTemplate>
