@@ -94,15 +94,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataFiles\DBContext.cs" />
-    <Compile Include="DataFiles\Employees.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\EmployeesProducts.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\Materials.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataFiles\md5.cs" />
     <Compile Include="DataFiles\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -121,21 +112,6 @@
     </Compile>
     <Compile Include="DataFiles\PasswordStrengthChecker.cs" />
     <Compile Include="DataFiles\PgFrame.cs" />
-    <Compile Include="DataFiles\Posts.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\Products.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\Role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\Users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFiles\Workshops.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
