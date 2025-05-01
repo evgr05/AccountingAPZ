@@ -8,12 +8,14 @@
         Title="" Height="450" Width="300"
         ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230"> 
-            <TextBlock Text="Логин: "/>
-            <TextBox x:Name="txbLogin" Text="{Binding Login}"/>
-            <TextBlock Text="ФИО Сотрудника: "/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
+            <TextBlock Text="Логин: " FontSize="16"/>
+            <TextBox x:Name="txbLogin" Text="{Binding Login}" Height="30" FontSize="16"/>
+            <TextBlock Text="ФИО Сотрудника: " FontSize="16"/>
             <ComboBox x:Name="cmbEmpl" 
-                      SelectedItem="{Binding Employees}">
+                      SelectedItem="{Binding Employees}"
+                      Height="30"
+                      FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -26,13 +28,14 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Роль: "/>
+            <TextBlock Text="Роль: " FontSize="16"/>
             <ComboBox x:Name="cmbRole"
                       SelectedItem="{Binding Role}"
                       DisplayMemberPath="Title"
-                      Margin="0 0 0 10"/>
-            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>
-            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click"/>
+                      Margin="0 0 0 10" Height="30"
+                      FontSize="16"/>
+            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10" Height="30" FontSize="16"/>
+            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click" Height="30" FontSize="16"/>
 
         </StackPanel>
     </Grid>

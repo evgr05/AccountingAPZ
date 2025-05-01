@@ -5,22 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountingAPZ.Pages"
         mc:Ignorable="d"
-        Height="450" Width="300"
+        Height="600" Width="400"
         ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
-            <TextBlock Text="Имя:"/>
-            <TextBox Text="{Binding FirstName}"/>
-            <TextBlock Text="Фамилия:"/>
-            <TextBox Text="{Binding SurName}"/>
-            <TextBlock Text="Отчество:"/>
-            <TextBox Text="{Binding Patronymic}"/>
-            <TextBlock Text="Номер телефона:"/>
-            <TextBox Text="{Binding Phone}"/>
-            <TextBlock Text="Адрес::"/>
-            <TextBox Text="{Binding Adress}"/>            
-            <TextBlock Text="Должность: "/>
-            <ComboBox x:Name="cmbPosts" SelectedItem="{Binding Posts}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Имя:" FontSize="16"/>
+            <TextBox Text="{Binding FirstName}" 
+                     Height="30"
+                     FontSize="16"/>
+            <TextBlock Text="Фамилия:" FontSize="16"/>
+            <TextBox Text="{Binding SurName}"
+                     Height="30"
+                     FontSize="16"/>
+            <TextBlock Text="Отчество:" FontSize="16"/>
+            <TextBox Text="{Binding Patronymic}"
+                     Height="30"
+                     FontSize="16"/>
+            <TextBlock Text="Номер телефона:" FontSize="16"/>
+            <TextBox Text="{Binding Phone}"
+                     Height="30"
+                     FontSize="16"/>
+            <TextBlock Text="Адрес:" FontSize="16"/>
+            <TextBox Text="{Binding Adress}"
+                     Height="30"
+                     FontSize="16"/>
+            <TextBlock Text="Должность: " FontSize="16"/>
+            <ComboBox x:Name="cmbPosts" 
+                      SelectedItem="{Binding Posts}"
+                      Height="30"
+                      FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -30,8 +43,12 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Цех: "/>
-            <ComboBox x:Name="cmbWorkshops" SelectedItem="{Binding Workshops}" Margin="0 0 0 10">
+            <TextBlock Text="Цех: " FontSize="16"/>
+            <ComboBox x:Name="cmbWorkshops" 
+                      SelectedItem="{Binding Workshops}" 
+                      Margin="0 0 0 10"
+                      Height="30"
+                      FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -45,8 +62,17 @@
             </ComboBox>
 
 
-            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>
-            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click"/>
+            <Button x:Name="saveBtn" 
+                    Content="Сохранить" 
+                    Click="saveBtn_Click" 
+                    Margin="0 0 0 10"
+                    Height="30"
+                    FontSize="16"/>
+            <Button x:Name="bckBtn" 
+                    Content="Закрыть" 
+                    Click="bckBtn_Click"
+                    Height="30"
+                    FontSize="16"/>
 
         </StackPanel>
         

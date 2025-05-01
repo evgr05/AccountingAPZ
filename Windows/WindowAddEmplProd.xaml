@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountingAPZ.Pages"
         mc:Ignorable="d"
-        Height="450" Width="300"
+        Height="450" Width="400"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,9 +18,9 @@
                       Click="typeWorkMenu_Click"/>
 
         </Menu>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230" Grid.Row="1">
-            <TextBlock Text="ФИО сотрудника "/>
-            <ComboBox x:Name="cmbNameEmpl" SelectedItem="{Binding Employees}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Grid.Row="1">
+            <TextBlock Text="ФИО сотрудника " FontSize="16"/>
+            <ComboBox x:Name="cmbNameEmpl" SelectedItem="{Binding Employees}" Height="30" FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -33,28 +33,28 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Тип работы: "/>
-            <ComboBox x:Name="cmbTypeWork" SelectedItem="{Binding TypeWork}">
+            <TextBlock Text="Тип работы: " FontSize="16"/>
+            <ComboBox x:Name="cmbTypeWork" SelectedItem="{Binding TypeWork}" Height="30" FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Title}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Продукт: "/>
-            <ComboBox x:Name="cmbProducts" SelectedItem="{Binding Products}">
+            <TextBlock Text="Продукт: " FontSize="16"/>
+            <ComboBox x:Name="cmbProducts" SelectedItem="{Binding Products}" Height="30" FontSize="16">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Title}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Количество: "/>
-            <TextBox Text="{Binding Count}"/>
-            <TextBlock Text="Дата производства: "/>
-            <DatePicker SelectedDate="{Binding Date}" Margin="0 0 0 10"/>
-            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>
-            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click"/>
+            <TextBlock Text="Количество: " FontSize="16"/>
+            <TextBox Text="{Binding Count}" Height="30" FontSize="16"/>
+            <TextBlock Text="Дата производства: " FontSize="16"/>
+            <DatePicker SelectedDate="{Binding Date}" Margin="0 0 0 10" Height="30" FontSize="16"/>
+            <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10" Height="30" FontSize="16"/>
+            <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click" Height="30" FontSize="16"/>
 
         </StackPanel>
     </Grid>
