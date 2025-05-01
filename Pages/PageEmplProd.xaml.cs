@@ -31,7 +31,7 @@ namespace AccountingAPZ.Pages
             prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.ToList();
             PgFrame.headStr.Content = "Изготовленная продукция";
             dateCol.Binding.StringFormat = "dd.MM.yyyy";
-            
+            txbSearch.Visibility = Visibility.Visible;
 
 
         }
@@ -80,30 +80,46 @@ namespace AccountingAPZ.Pages
         {
             if (cmbSearch.SelectedIndex == 0)
             {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.FirstName.Contains(txbSearch.Text)).ToList();
             }
             if (cmbSearch.SelectedIndex == 1)
             {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.SurName.Contains(txbSearch.Text)).ToList();
             }
             if(cmbSearch.SelectedIndex == 2)
             {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.Patronymic.Contains(txbSearch.Text)).ToList();
             }
             if (cmbSearch.SelectedIndex == 3)
             {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Count.ToString().Contains(txbSearch.Text)).ToList();
             }
             if (cmbSearch.SelectedIndex == 4)
             {
-                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(txbSearch.Text)).ToList();
+                txbSearch.Visibility = Visibility.Collapsed;
+                selDate.Visibility = Visibility.Visible;
+                //MessageBox.Show(selDate.SelectedDate.ToString());
+                //prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(selDate.SelectedDate.ToString())).ToList();
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date == selDate.SelectedDate).ToList();
             }
 
         }
 
         private void cmbSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbSearch.SelectedIndex == 0)
+            /*if (cmbSearch.SelectedIndex == 0)
             {
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.FirstName.Contains(txbSearch.Text)).ToList();
             }
@@ -122,10 +138,82 @@ namespace AccountingAPZ.Pages
             if (cmbSearch.SelectedIndex == 4)
             {
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(txbSearch.Text)).ToList();
+            }*/
+            if (cmbSearch.SelectedIndex == 0)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.FirstName.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 1)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.SurName.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 2)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.Patronymic.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 3)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Count.ToString().Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 4)
+            {
+                txbSearch.Visibility = Visibility.Collapsed;
+                selDate.Visibility = Visibility.Visible;
+                //prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(selDate.SelectedDate.ToString())).ToList();
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date == selDate.SelectedDate).ToList();
             }
         }
 
-
-        
+        private void selDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbSearch.SelectedIndex == 0)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.FirstName.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 1)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.SurName.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 2)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Employees.Patronymic.Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 3)
+            {
+                txbSearch.Visibility = Visibility.Visible;
+                selDate.Visibility = Visibility.Collapsed;
+                txbSearch.Visibility = Visibility.Visible;
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Count.ToString().Contains(txbSearch.Text)).ToList();
+            }
+            if (cmbSearch.SelectedIndex == 4)
+            {
+                txbSearch.Visibility = Visibility.Collapsed;
+                selDate.Visibility = Visibility.Visible;
+                //MessageBox.Show(selDate.SelectedDate.ToString());
+                //prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(selDate.SelectedDate.ToString())).ToList();
+                prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date == selDate.SelectedDate).ToList();
+            }
+        }
     }
 }

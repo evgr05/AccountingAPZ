@@ -59,7 +59,8 @@
                 Click="btnAdd_Click"/>
         <StackPanel Orientation="Horizontal" Height="28" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Поиск" FontSize="17" VerticalAlignment="Center"/>
-            <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch"  Width="300" TextChanged="txbSearch_TextChanged"/>
+            <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch"  Width="300" Visibility="Collapsed" TextChanged="txbSearch_TextChanged"/>
+            <DatePicker Margin="5 0 5 0" x:Name="selDate" FontSize="17" Width="300" Visibility="Collapsed" SelectedDateFormat="Short" SelectedDateChanged="selDate_SelectedDateChanged"/>
             <ComboBox FontSize="15" Width="170" Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
                 <ComboBoxItem IsSelected="True" Content="Имя"/>
                 <ComboBoxItem Content="Фамилия"/>
