@@ -8,22 +8,32 @@
         Height="450" Width="300"
         ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Типы работ" 
+                      x:Name="typeWorkMenu" 
+                      Click="typeWorkMenu_Click"/>
+
+        </Menu>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="230" Grid.Row="1">
             <TextBlock Text="ФИО сотрудника "/>
             <ComboBox x:Name="cmbNameEmpl" SelectedItem="{Binding Employees}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">                          
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding SurName}"/>
                             <TextBlock Text=" "/>
                             <TextBlock Text="{Binding FirstName}"/>
                             <TextBlock Text=" "/>
                             <TextBlock Text="{Binding Patronymic}"/>
-                        </StackPanel>                        
+                        </StackPanel>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Text="Продукт: "/>
+            <TextBlock Text="Тип работы: "/>
             <ComboBox x:Name="cmbTypeWork" SelectedItem="{Binding TypeWork}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -42,7 +52,7 @@
             <TextBlock Text="Количество: "/>
             <TextBox Text="{Binding Count}"/>
             <TextBlock Text="Дата производства: "/>
-            <DatePicker SelectedDate="{Binding Date}" Margin="0 0 0 10"/>            
+            <DatePicker SelectedDate="{Binding Date}" Margin="0 0 0 10"/>
             <Button x:Name="saveBtn" Content="Сохранить" Click="saveBtn_Click" Margin="0 0 0 10"/>
             <Button x:Name="bckBtn" Content="Закрыть" Click="bckBtn_Click"/>
 

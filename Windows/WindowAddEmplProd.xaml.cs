@@ -1,4 +1,5 @@
 ﻿using AccountingAPZ.DataFiles;
+using AccountingAPZ.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,12 @@ namespace AccountingAPZ.Pages
         private void bckBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void typeWorkMenu_Click(object sender, RoutedEventArgs e)
+        {
+            WindowTypeWork windowTypeWork = new WindowTypeWork();
+            windowTypeWork.ShowDialog();
         }
     }
 }

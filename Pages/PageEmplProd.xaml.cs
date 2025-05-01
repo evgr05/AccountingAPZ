@@ -126,10 +126,6 @@ namespace AccountingAPZ.Pages
         }
 
 
-        private void typeWorkMenu_Click(object sender, RoutedEventArgs e)
-        {
-            WindowTypeWork windowTypeWork = new WindowTypeWork();
-            windowTypeWork.ShowDialog();
-        }
+        
     }
 }
