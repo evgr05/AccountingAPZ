@@ -19,7 +19,7 @@
                   Grid.Row="0"
                   FontSize="15"
                   CanUserReorderColumns="False"
-                  CanUserResizeColumns="False">
+                  CanUserResizeColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Employees.SurName}"/>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Employees.FirstName}"/>

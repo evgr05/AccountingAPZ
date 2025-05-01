@@ -81,7 +81,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Users">
@@ -388,7 +388,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="EmployeesProducts" Relationship="AccountingAPZModel.FK_EmployeesProducts_TypeWork" FromRole="TypeWork" ToRole="EmployeesProducts" />
         </EntityType>
