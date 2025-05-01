@@ -85,6 +85,12 @@
     <Compile Include="DataFiles\Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataFiles\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataFiles\TypeWork.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataFiles\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -94,17 +100,26 @@
     <Compile Include="Pages\PageAddEditPosts.xaml.cs">
       <DependentUpon>PageAddEditPosts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAddEditTypeWork.xaml.cs">
+      <DependentUpon>PageAddEditTypeWork.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageAddEditWorkshops.xaml.cs">
       <DependentUpon>PageAddEditWorkshops.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageListPosts.xaml.cs">
       <DependentUpon>PageListPosts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageListTypeWork.xaml.cs">
+      <DependentUpon>PageListTypeWork.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageListWorkshops.xaml.cs">
       <DependentUpon>PageListWorkshops.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowPosts.xaml.cs">
       <DependentUpon>WindowPosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowTypeWork.xaml.cs">
+      <DependentUpon>WindowTypeWork.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowWorkshops.xaml.cs">
       <DependentUpon>WindowWorkshops.xaml</DependentUpon>
@@ -144,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageAddEditTypeWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageAddEditWorkshops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageListPosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageListTypeWork.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\WindowPosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowTypeWork.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

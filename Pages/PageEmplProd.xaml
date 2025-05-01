@@ -10,13 +10,20 @@
 
     <Grid Margin="5">
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Типы работ" 
+                      x:Name="typeWorkMenu" 
+                      Click="typeWorkMenu_Click"/>           
+
+        </Menu>
         <DataGrid x:Name="prodGrid" 
                   AutoGenerateColumns="False" 
                   IsReadOnly="True" 
-                  Grid.Row="0"
+                  Grid.Row="1"
                   FontSize="15"
                   CanUserReorderColumns="False"
                   CanUserResizeColumns="False">
@@ -24,6 +31,7 @@
                 <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Employees.SurName}"/>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Employees.FirstName}"/>
                 <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding Employees.Patronymic}"/>
+                <DataGridTextColumn Header="Тип работы" Width="*" Binding="{Binding TypeWork.Title}"/>
                 <DataGridTextColumn Header="Произведено" Width="*" Binding="{Binding Products.Title}"/>
                 <DataGridTextColumn Header="Количество" Width="100" Binding="{Binding Count}"/>
                 <DataGridTextColumn Header="Дата изготовления" x:Name="dateCol" Binding="{Binding Date}"/>
@@ -52,12 +60,12 @@
         <Button x:Name="btnAdd" 
                 Width="100" Height="30"
                 FontSize="15"
-                Margin="5 0 0 0" 
+                Margin="5,7,0,8" 
                 Content="Добавить" 
-                Grid.Row="1" 
+                Grid.Row="2" 
                 HorizontalAlignment="Left" VerticalAlignment="Center" 
                 Click="btnAdd_Click"/>
-        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Height="28" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="131,9,131,8">
             <TextBlock Text="Поиск" FontSize="17" VerticalAlignment="Center"/>
             <TextBox Margin="5 0 5 0" FontSize="17" x:Name="txbSearch"  Width="300" TextChanged="txbSearch_TextChanged"/>
             <ComboBox FontSize="15" Width="170" Name="cmbSearch" SelectionChanged="cmbSearch_SelectionChanged">
@@ -73,8 +81,8 @@
             Width="100" Height="30"
             FontSize="15"
             Content="Назад" 
-            Margin="0 0 5 0" 
-            Grid.Row="1"
+            Margin="0,7,5,8" 
+            Grid.Row="2"
             HorizontalAlignment="Right" VerticalAlignment="Center" 
             Click="btnBack_Click"/>
     </Grid>

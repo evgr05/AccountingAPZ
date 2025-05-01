@@ -5,19 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4853244a178a4d9abd28d503cdd7f1bf" Name="Diagram1" ZoomLevel="85">
-        <EntityTypeShape EntityType="AccountingAPZModel.Employees" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Employees" Width="1.5" PointX="3" PointY="3.25" />
         <EntityTypeShape EntityType="AccountingAPZModel.EmployeesProducts" Width="1.5" PointX="5.25" PointY="3.5" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Materials" Width="1.5" PointX="0.75" PointY="8.625" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Posts" Width="1.5" PointX="0.75" PointY="3.875" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Products" Width="1.5" PointX="3" PointY="8.75" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Role" Width="1.5" PointX="6" PointY="0.875" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Users" Width="1.5" PointX="8.25" PointY="3.5" />
-        <EntityTypeShape EntityType="AccountingAPZModel.Workshops" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Materials" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Posts" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Products" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Role" Width="1.5" PointX="6" PointY="1.125" />
+        <EntityTypeShape EntityType="AccountingAPZModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.625" />
+        <EntityTypeShape EntityType="AccountingAPZModel.TypeWork" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Users" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="AccountingAPZModel.Workshops" Width="1.5" PointX="0.75" PointY="4" />
         <AssociationConnector Association="AccountingAPZModel.FK_Employees_Posts" />
         <AssociationConnector Association="AccountingAPZModel.FK_Employees_Workshops" />
         <AssociationConnector Association="AccountingAPZModel.FK_EmployeesProducts_Employees" />
         <AssociationConnector Association="AccountingAPZModel.FK_Users_Employees" />
         <AssociationConnector Association="AccountingAPZModel.FK_EmployeesProducts_Products" />
+        <AssociationConnector Association="AccountingAPZModel.FK_EmployeesProducts_TypeWork" />
         <AssociationConnector Association="AccountingAPZModel.FK_Users_Role" />
         <AssociationConnector Association="AccountingAPZModel.MaterialProducts" />
       </Diagram>

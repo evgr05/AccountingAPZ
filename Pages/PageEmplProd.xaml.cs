@@ -1,4 +1,5 @@
 ﻿using AccountingAPZ.DataFiles;
+using AccountingAPZ.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -122,6 +123,13 @@ namespace AccountingAPZ.Pages
             {
                 prodGrid.ItemsSource = DBContext.entObj.EmployeesProducts.Where(x => x.Date.ToString().Contains(txbSearch.Text)).ToList();
             }
+        }
+
+
+        private void typeWorkMenu_Click(object sender, RoutedEventArgs e)
+        {
+            WindowTypeWork windowTypeWork = new WindowTypeWork();
+            windowTypeWork.ShowDialog();
         }
     }
 }

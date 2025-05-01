@@ -34,6 +34,7 @@ namespace AccountingAPZ.Pages
             DataContext = _selectedEmpl;            
             cmbNameEmpl.ItemsSource = DBContext.entObj.Employees.ToList();
             cmbProducts.ItemsSource = DBContext.entObj.Products.ToList();
+            cmbTypeWork.ItemsSource = DBContext.entObj.TypeWork.ToList();
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

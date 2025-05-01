@@ -12,17 +12,18 @@ namespace AccountingAPZ.DataFiles
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeesProducts
+    public partial class TypeWork
     {
-        public int Id { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public Nullable<int> ProductId { get; set; }
-        public Nullable<int> Count { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> TypeWorkId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TypeWork()
+        {
+            this.EmployeesProducts = new HashSet<EmployeesProducts>();
+        }
     
-        public virtual Employees Employees { get; set; }
-        public virtual Products Products { get; set; }
-        public virtual TypeWork TypeWork { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EmployeesProducts> EmployeesProducts { get; set; }
     }
 }

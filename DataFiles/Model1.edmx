@@ -27,6 +27,7 @@
           <Property Name="ProductId" Type="int" />
           <Property Name="Count" Type="int" />
           <Property Name="Date" Type="date" />
+          <Property Name="TypeWorkId" Type="int" />
         </EntityType>
         <EntityType Name="MaterialProducts">
           <Key>
@@ -64,6 +65,23 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeWork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Users">
@@ -133,6 +151,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EmployeesProducts_TypeWork">
+          <End Role="TypeWork" Type="Self.TypeWork" Multiplicity="0..1" />
+          <End Role="EmployeesProducts" Type="Self.EmployeesProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeWork">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeesProducts">
+              <PropertyRef Name="TypeWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaterialProducts_Materials">
           <End Role="Materials" Type="Self.Materials" Multiplicity="1" />
           <End Role="MaterialProducts" Type="Self.MaterialProducts" Multiplicity="*" />
@@ -189,6 +219,8 @@
           <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeWork" EntityType="Self.TypeWork" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Workshops" EntityType="Self.Workshops" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employees_Posts" Association="Self.FK_Employees_Posts">
@@ -205,6 +237,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_EmployeesProducts_Products" Association="Self.FK_EmployeesProducts_Products">
             <End Role="Products" EntitySet="Products" />
+            <End Role="EmployeesProducts" EntitySet="EmployeesProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeesProducts_TypeWork" Association="Self.FK_EmployeesProducts_TypeWork">
+            <End Role="TypeWork" EntitySet="TypeWork" />
             <End Role="EmployeesProducts" EntitySet="EmployeesProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_MaterialProducts_Materials" Association="Self.FK_MaterialProducts_Materials">
@@ -235,6 +271,8 @@
           <EntitySet Name="Posts" EntityType="AccountingAPZModel.Posts" />
           <EntitySet Name="Products" EntityType="AccountingAPZModel.Products" />
           <EntitySet Name="Role" EntityType="AccountingAPZModel.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="AccountingAPZModel.sysdiagrams" />
+          <EntitySet Name="TypeWork" EntityType="AccountingAPZModel.TypeWork" />
           <EntitySet Name="Users" EntityType="AccountingAPZModel.Users" />
           <EntitySet Name="Workshops" EntityType="AccountingAPZModel.Workshops" />
           <AssociationSet Name="FK_Employees_Posts" Association="AccountingAPZModel.FK_Employees_Posts">
@@ -255,6 +293,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_EmployeesProducts_Products" Association="AccountingAPZModel.FK_EmployeesProducts_Products">
             <End Role="Products" EntitySet="Products" />
+            <End Role="EmployeesProducts" EntitySet="EmployeesProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeesProducts_TypeWork" Association="AccountingAPZModel.FK_EmployeesProducts_TypeWork">
+            <End Role="TypeWork" EntitySet="TypeWork" />
             <End Role="EmployeesProducts" EntitySet="EmployeesProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Role" Association="AccountingAPZModel.FK_Users_Role">
@@ -292,8 +334,10 @@
           <Property Name="ProductId" Type="Int32" />
           <Property Name="Count" Type="Int32" />
           <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="TypeWorkId" Type="Int32" />
           <NavigationProperty Name="Employees" Relationship="AccountingAPZModel.FK_EmployeesProducts_Employees" FromRole="EmployeesProducts" ToRole="Employees" />
           <NavigationProperty Name="Products" Relationship="AccountingAPZModel.FK_EmployeesProducts_Products" FromRole="EmployeesProducts" ToRole="Products" />
+          <NavigationProperty Name="TypeWork" Relationship="AccountingAPZModel.FK_EmployeesProducts_TypeWork" FromRole="EmployeesProducts" ToRole="TypeWork" />
         </EntityType>
         <EntityType Name="Materials">
           <Key>
@@ -329,6 +373,24 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="AccountingAPZModel.FK_Users_Role" FromRole="Role" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeWork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeesProducts" Relationship="AccountingAPZModel.FK_EmployeesProducts_TypeWork" FromRole="TypeWork" ToRole="EmployeesProducts" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -412,6 +474,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EmployeesProducts_TypeWork">
+          <End Type="AccountingAPZModel.TypeWork" Role="TypeWork" Multiplicity="0..1" />
+          <End Type="AccountingAPZModel.EmployeesProducts" Role="EmployeesProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeWork">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeesProducts">
+              <PropertyRef Name="TypeWorkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Role">
           <End Type="AccountingAPZModel.Role" Role="Role" Multiplicity="0..1" />
           <End Type="AccountingAPZModel.Users" Role="Users" Multiplicity="*" />
@@ -451,6 +525,7 @@
           <EntitySetMapping Name="EmployeesProducts">
             <EntityTypeMapping TypeName="AccountingAPZModel.EmployeesProducts">
               <MappingFragment StoreEntitySet="EmployeesProducts">
+                <ScalarProperty Name="TypeWorkId" ColumnName="TypeWorkId" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -488,6 +563,25 @@
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="AccountingAPZModel.Role">
               <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AccountingAPZModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeWork">
+            <EntityTypeMapping TypeName="AccountingAPZModel.TypeWork">
+              <MappingFragment StoreEntitySet="TypeWork">
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
