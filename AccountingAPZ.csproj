@@ -85,9 +85,6 @@
     <Compile Include="DataFiles\Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataFiles\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataFiles\TypeWork.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
